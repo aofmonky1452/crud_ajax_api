@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="title">
+            <h1>Movie list</h1>
+            <div class="btn-create" onclick="open_modal_create()">
+                Create
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50px;">Order</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th style="width: 250px;">Action</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <!-- <tr>
+                    <td>1</td>
+                    <td>Movie name</td>
+                    <td>Horror</td>
+                    <td>
+                        <div class="btn-control">
+                            <div onclick="open_modal_edit()" class="btn-edit">Edit</div>
+                            <div onclick="delete_movielist()" class="btn-delete">Delete</div>
+                        </div>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- create modal -->
+    <div class="modal" id="modal_create">
+        <div class="modal-bg" onclick="close_modal()"></div>
+        <div class="modal-card">
+            <h1>Create movie list</h1>
+            <div class="form-control">
+                <span>Name</span>
+                <input id="txt_create_name" type="text" class="txt" placeholder="Insert movie name">
+            </div>
+            <div class="form-control">
+                <span>Type</span>
+                <select id=txt_create_type class="txt">
+                    <option value="">--- select ---</option>
+                    <option value="action">Action</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="horror">Horror</option>
+                </select>
+            </div>
+            <div class="form-submit">
+                <div onclick="save_movielist()" class="btn-create">Create</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- edit modal -->
+    <div class="modal" id="modal_edit">
+        <div class="modal-bg" onclick="close_modal()"></div>
+        <div class="modal-card">
+            <h1>Edit movie list</h1>
+            <div class="form-control">
+                <span>Name</span>
+                <input id="txt_edit_name" type="text" class="txt" placeholder="Insert movie name">
+            </div>
+            <div class="form-control">
+                <span>Type</span>
+                <select id="txt_edit_type" class="txt">
+                    <option value="">--- select ---</option>
+                    <option value="action">Action</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="horror">Horror</option>
+                </select>
+            </div>
+            <div class="form-submit">
+                <div onclick="update_movielist()" class="btn-edit">Edit</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Sweet alert 2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
